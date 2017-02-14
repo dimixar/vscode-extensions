@@ -1,0 +1,5 @@
+16:25:01.160762: Log
+---
+
+16:25:01.176481: UnityDebug
+16:25:02.129811: Found Unity process: Unity Editor (Unity) (347)

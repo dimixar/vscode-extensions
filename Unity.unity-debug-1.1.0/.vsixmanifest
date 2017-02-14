@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Language="en-US" Id="unity-debug" Version="1.1.0" Publisher="Unity"/>
+    <DisplayName>Debugger for Unity</DisplayName>
+    <Description xml:space="preserve">Unity debugger extension</Description>
+    <Tags>unity,unity3d,debugger,debug,vscode</Tags>
+    <Categories>Debuggers</Categories>
+    <GalleryFlags>Public</GalleryFlags>
+    <Properties>
+      
+        <Property Id="Microsoft.VisualStudio.Services.Links.Source" Value="https://github.com/Unity-Technologies/vscode-unity-debug.git" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Getstarted" Value="https://github.com/Unity-Technologies/vscode-unity-debug.git" />
+        <Property Id="Microsoft.VisualStudio.Services.Links.Repository" Value="https://github.com/Unity-Technologies/vscode-unity-debug.git" />
+      
+      <Property Id="Microsoft.VisualStudio.Services.Links.Support" Value="https://github.com/Unity-Technologies/vscode-unity-debug/issues" />
+      <Property Id="Microsoft.VisualStudio.Services.Links.Learn" Value="https://github.com/Unity-Technologies/vscode-unity-debug" />
+      
+      
+    </Properties>
+    
+    <Icon>extension/Images/unity-logo128x128.png</Icon>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Code"/>
+  </Installation>
+  <Dependencies/>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.Code.Manifest" Path="extension/package.json" Addressable="true" />
+    <Asset Type="Microsoft.VisualStudio.Services.Content.Details" Path="extension/README.md" Addressable="true" /><Asset Type="Microsoft.VisualStudio.Services.Icons.Default" Path="extension/Images/unity-logo128x128.png" Addressable="true" />
+  </Assets>
+</PackageManifest>

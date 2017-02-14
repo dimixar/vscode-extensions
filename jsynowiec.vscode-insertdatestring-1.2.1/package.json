@@ -1,0 +1,96 @@
+{
+	"name": "vscode-insertdatestring",
+	"version": "1.2.1",
+	"description": "Insert the current date and time according to configured format.",
+	"homepage": "https://github.com/jsynowiec/vscode-insertdatestring#readme",
+	"bugs": {
+		"url": "https://github.com/jsynowiec/vscode-insertdatestring/issues"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Jakub Synowiec",
+		"email": "github@jakubsynowiec.info",
+		"url": "https://jakubsynowiec.info"
+	},
+	"main": "./src/extension",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jsynowiec/vscode-insertdatestring"
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"lint": "eslint 'src/**.js'"
+	},
+	"dependencies": {
+		"date-format-lite": "0.9.2"
+	},
+	"devDependencies": {
+		"eslint": "~3.14.1",
+		"eslint-config-airbnb-base": "~11.0.1",
+		"eslint-plugin-import": "~2.2.0",
+		"vscode": "~1.0.3"
+	},
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"activationEvents": [
+		"onCommand:insertdatestring.insertdatetime",
+		"onCommand:insertdatestring.inserttimestamp",
+		"onCommand:insertdatestring.insertownformatdatetime"
+	],
+	"categories": [
+		"Other"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "insertdatestring.insertdatetime",
+				"title": "Insert DateTime"
+			},
+			{
+				"command": "insertdatestring.inserttimestamp",
+				"title": "Insert Timestamp"
+			},
+			{
+				"command": "insertdatestring.insertownformatdatetime",
+				"title": "Insert Formatted DateTime"
+			}
+		],
+		"configuration": {
+			"title": "Insert Date String Configuration",
+			"properties": {
+				"insertdatestring.format": {
+					"type": "string",
+					"default": "YYYY-MM-DD hh:mm:ss",
+					"description": "Date format to be used."
+				}
+			}
+		},
+		"keybindings": [
+			{
+				"command": "insertdatestring.insertdatetime",
+				"key": "shift+ctrl+i",
+				"mac": "shift+cmd+i",
+				"when": "editorTextFocus"
+			},
+			{
+				"command": "insertdatestring.insertownformatdatetime",
+				"key": "shift+ctrl+alt+i",
+				"mac": "shift+cmd+alt+i",
+				"when": "editorTextFocus"
+			}
+		]
+	},
+	"displayName": "Insert Date String",
+	"publisher": "jsynowiec",
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#005696",
+		"theme": "dark"
+	},
+	"__metadata": {
+		"id": "92d01ae4-5a2e-4299-990c-7905798fb719",
+		"publisherId": "12b69176-2a02-46e1-8a16-56b008b4c22b",
+		"publisherDisplayName": "jsynowiec"
+	}
+}

@@ -1,0 +1,63 @@
+UnityDebug - Unity Debugger Extension for Visual Studio Code
+--------------------------------------------------------------------------------
+
+Git: https://github.com/Unity-Technologies/vscode-unity-debug
+
+Changes
+-------
+
+1.1.0
+=====
+ - Added "Unity Attach Debugger" to command palette. Patch contributed by Dominick.
+ - Fixed issue with being unable to attach to Linux Player.
+
+1.0.4
+=====
+
+- Fixed issue with case sensitive path compare.
+  (https://github.com/Unity-Technologies/vscode-unity-debug/issues/14)
+
+1.0.3
+=====
+
+- Improved logging when multiple Unity processes are found.
+
+1.0.2
+=====
+
+- Improved support for expressions added with "Add Watch"
+
+- Fixed issue with being unable to attach to Unity editor on Ubuntu, when
+  using Unity graphical shell.
+
+- Attaching to the Unity Editor is faster.
+
+- Update debugger protocol to latest version.
+
+1.0.1
+=====
+
+- Fixed issue with using "Add Watch" not generating valid expressions.
+
+1.0.0
+=====
+
+- Fixed issue with being unable to add a watch.
+
+0.5.0
+=====
+
+- Added support for attaching to Windows, OSX, Linux, Android and iOS players
+
+- Added log file
+  OSX/Linux: ${HOME}/.vscode/extensions/Unity.unity-debug-x.y.z/bin/UnityDebug-log.txt
+  Windows: %USERPROFILE%\.vscode\extensions\Unity.unity-debug-x.y.z\bin\UnityDebug-log.txt
+
+- Fix issue with "unity" being marked as unknown "type" in launch.json
+
+0.1.0
+=====
+
+- Initial release.
+
+- Only attaching to Unity editor is supported.

@@ -1,0 +1,102 @@
+{
+	"name": "unity-debug",
+	"displayName": "Debugger for Unity",
+	"version": "1.1.0",
+	"publisher": "Unity",
+	"description": "Unity debugger extension",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Debuggers"
+	],
+	"keywords": [
+		"unity",
+		"unity3d",
+		"debugger",
+		"debug"
+	],
+	"homepage": "https://github.com/Unity-Technologies/vscode-unity-debug",
+	"bugs": {
+		"url": "https://github.com/Unity-Technologies/vscode-unity-debug/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Unity-Technologies/vscode-unity-debug.git"
+	},
+	"icon": "Images/unity-logo128x128.png",
+	"main": "./attach",
+	"activationEvents": [
+		"onCommand:attach.attachToDebugger"
+	],
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"contributes": {
+		"commands": [
+			{
+				"command": "attach.attachToDebugger",
+				"title": "Unity Attach Debugger"
+			}
+		],
+		"debuggers": [
+			{
+				"type": "unity",
+				"label": "Unity Debugger",
+				"configurationAttributes": {
+					"launch": {},
+					"attach": {}
+				},
+				"enableBreakpointsFor": {
+					"languageIds": [
+						"csharp"
+					]
+				},
+				"program": "./bin/UnityDebug.exe",
+				"osx": {
+					"runtime": "mono"
+				},
+				"linux": {
+					"runtime": "mono"
+				},
+				"initialConfigurations": [
+					{
+						"name": "Unity Editor",
+						"type": "unity",
+						"request": "launch"
+					},
+					{
+						"name": "Windows Player",
+						"type": "unity",
+						"request": "launch"
+					},
+					{
+						"name": "OSX Player",
+						"type": "unity",
+						"request": "launch"
+					},
+					{
+						"name": "Linux Player",
+						"type": "unity",
+						"request": "launch"
+					},
+					{
+						"name": "iOS Player",
+						"type": "unity",
+						"request": "launch"
+					},
+					{
+						"name": "Android Player",
+						"type": "unity",
+						"request": "launch"
+					}
+				]
+			}
+		]
+	},
+	"__metadata": {
+		"id": "b0605276-f92b-4616-be91-ea11ec64dd1f",
+		"publisherId": "6b2b5df2-6ef1-4326-bba5-e194f6920420",
+		"publisherDisplayName": "Unity Technologies"
+	}
+}

@@ -1,0 +1,118 @@
+{
+	"name": "unity-tools",
+	"displayName": "Unity Tools",
+	"description": "Various tools to help with Unity development",
+	"version": "0.1.9",
+	"publisher": "Tobiah",
+	"engines": {
+		"vscode": "^0.10.7"
+	},
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"homepage": "https://github.com/TobiahZ/unity-tools",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TobiahZ/unity-tools.git"
+	},
+	"categories": [
+		"Other"
+	],
+	"bugs": "https://github.com/TobiahZ/unity-tools/issues",
+	"keywords": [
+		"unity",
+		"unity3d",
+		"docs",
+		"documentation",
+		"asset store"
+	],
+	"activationEvents": [
+		"onCommand:unity-tools.OpenDocs",
+		"onCommand:unity-tools.SearchDocs",
+		"onCommand:unity-tools.SearchMSDNDocs",
+		"onCommand:unity-tools.OpenVSCodeDocs",
+		"onCommand:unity-tools.GetAssetStorePlugin",
+		"onCommand:unity-tools.CreateDirectories"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "unity-tools.OpenDocs",
+				"title": "Unity Tools: Open Documentation for Selection"
+			},
+			{
+				"command": "unity-tools.SearchDocs",
+				"title": "Unity Tools: Search Documentation"
+			},
+			{
+				"command": "unity-tools.SearchMSDNDocs",
+				"title": "Unity Tools: Search MSDN Documentation"
+			},
+			{
+				"command": "unity-tools.OpenVSCodeDocs",
+				"title": "Unity Tools: Open VSCode Documentation"
+			},
+			{
+				"command": "unity-tools.GetAssetStorePlugin",
+				"title": "Unity Tools: Get VSCode plug-in from the Asset Store"
+			},
+			{
+				"command": "unity-tools.CreateDirectories",
+				"title": "Unity Tools: Generate Organizational Folders"
+			}
+		],
+		"keybindings": [
+			{
+				"key": "ctrl+'",
+				"mac": "cmd+'",
+				"when": "editorTextFocus && editorLangId == 'csharp'",
+				"command": "unity-tools.OpenDocs"
+			},
+			{
+				"key": "ctrl+shift+'",
+				"mac": "cmd+shift+'",
+				"when": "editorTextFocus && editorLangId == 'csharp'",
+				"command": "unity-tools.SearchDocs"
+			}
+		]
+	},
+	"configuration": {
+		"type": "object",
+		"title": "Unity-Tools Settings",
+		"properties": {
+			"unity-tools.defaultOrganizationFolders": {
+				"type": "array",
+				"items": {
+					"type": "string"
+				},
+				"default": [
+					"Materials",
+					"Scenes",
+					"Scripts",
+					"Prefabs",
+					"Audio"
+				],
+				"description": "Sets which folders will be generated from the unity-tools.GenerateOrganizationFolders command"
+			}
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"pretest": "tsc",
+		"test": "mocha --ui tdd ./out/test/search.test.js"
+	},
+	"devDependencies": {
+		"typescript": "^1.6.2",
+		"vscode": "^0.11.x"
+	},
+	"dependencies": {
+		"open": "^0.0.5"
+	},
+	"icon": "unity-logo.png",
+	"__metadata": {
+		"id": "df7dc071-4d1a-488b-9984-2f4fc42331f3",
+		"publisherId": "78340c2c-d1af-49be-be2a-52d70f219e0a",
+		"publisherDisplayName": "Tobiah Zarlez"
+	}
+}
